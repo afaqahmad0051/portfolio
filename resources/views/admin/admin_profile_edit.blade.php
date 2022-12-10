@@ -10,7 +10,7 @@
                         <div class="col-6">                            
                             <h4 class="card-title">Edit Profile</h4>
                         </div>
-                        <div class="col-6">                            
+                        <div class="col-6">
                             <input type="submit" value="Update" class="btn btn-rounded btn-info waves-effect waves-light" style="float: right;">
                         </div>
                     </div><hr>
