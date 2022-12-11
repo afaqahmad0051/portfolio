@@ -1,13 +1,17 @@
+@php
+    $id = auth()->user()->id;
+    $adminData = App\Models\User::find($id);
+@endphp
 <!-- ========== Left Sidebar Start ========== -->
     <div class="vertical-menu">
         <div data-simplebar class="h-100">
             <!-- User details -->
             <div class="user-profile text-center mt-3">
                 <div class="">
-                    <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" alt="" class="avatar-md rounded-circle">
+                    <img src="{{ (!empty($adminData->profile_image))? url('upload/admin_images/'.$adminData->profile_image):url('upload/blank.jpg') }}" alt="" class="avatar-md rounded-circle">
                 </div>
                 <div class="mt-3">
-                    <h4 class="font-size-16 mb-1">{{auth()->user()->name}}</h4>
+                    <h4 class="font-size-16 mb-1">{{$adminData->name}}</h4>
                     <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
                 </div>
             </div>

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.index');
 });
 
 Route::get('/dashboard', function () {
@@ -33,6 +33,10 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/logout','destroy')->name('admin.logout');
     Route::get('/admin/profile','profile')->name('admin.profile');
     Route::get('/edit/profile','EditProfile')->name('edit.profile');
+    Route::post('/update/profile','StoreProfile')->name('store.profile');
+    
+    Route::get('/change/password','ChangePassword')->name('change.password');
+    Route::post('/update/password','UpdatePassword')->name('update.password');
 });
 
 require __DIR__.'/auth.php';
