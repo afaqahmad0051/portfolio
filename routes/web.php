@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\SliderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('user.index');
-});
+})->name('user.dashboard');
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -37,6 +39,17 @@ Route::controller(AdminController::class)->group(function () {
     
     Route::get('/change/password','ChangePassword')->name('change.password');
     Route::post('/update/password','UpdatePassword')->name('update.password');
+});
+
+Route::controller(SliderController::class)->group(function () {
+    Route::get('/home/slide','HomeSlider')->name('home.slide');
+    Route::post('/update/slider/{id}','UpdateSlider')->name('update.slider');
+});
+
+Route::controller(AboutController::class)->group(function () {
+    Route::get('/aboutme','about')->name('about');
+    Route::post('/update/about/{id}','UpdateAbout')->name('update.about');
+    Route::get('/about','HomeAbout')->name('home.about');
 });
 
 require __DIR__.'/auth.php';

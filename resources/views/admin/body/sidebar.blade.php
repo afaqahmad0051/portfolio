@@ -23,16 +23,23 @@
                     <li class="menu-title">Menu</li>
 
                     <li>
-                        <a href="index.html" class="waves-effect">
+                        <a href="{{ route('dashboard') }}" class="waves-effect">
                             <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
                             <span>Dashboard</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="calendar.html" class=" waves-effect">
-                            <i class="ri-calendar-2-line"></i>
-                            <span>Calendar</span>
+                        <a href="{{ route('home.slide') }}" class=" waves-effect">
+                            <i class="ri-pantone-fill"></i>
+                            <span>Slider</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('about') }}" class=" waves-effect">                        
+                            <i class="ri-user-2-fill"></i>
+                            <span>About</span>
                         </a>
                     </li>
         

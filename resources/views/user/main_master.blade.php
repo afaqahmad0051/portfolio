@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
     </head>
+    {{-- <body class="active-dark-mode"> --}}
     <body>
 
         <!-- preloader-start -->
