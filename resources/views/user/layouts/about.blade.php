@@ -31,7 +31,7 @@
                         <img class="dark" src="{{ asset('frontend/assets/img/icons/photoshop.png') }}" alt="Photoshop">
                     </li>
                     <li>
-                        <img class="light" src="assets/img/icons/figma_light.png" alt="Figma">
+                        <img class="light" src="{{asset('frontend/assets/img/icons/figma_light.png')}}" alt="Figma">
                         <img class="dark" src="{{ asset('frontend/assets/img/icons/figma.png') }}" alt="Figma">
                     </li>
                 </ul>

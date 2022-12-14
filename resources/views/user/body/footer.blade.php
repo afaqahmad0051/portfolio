@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright__text text-center">
-                        <p>Copyright @ Theme_Pure 2021 All right Reserved</p>
+                        <p>COPYRIGHT &copy; {{ date('Y') }} <b><a class="ms-25" href="https://www.linkedin.com/in/afaq-ahmad-1a06a3208/">AFAQ AHMAD</a></b><span>, All rights Reserved</span></p>
                     </div>
                 </div>
             </div>

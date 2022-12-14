@@ -1,3 +1,7 @@
+@php
+$prefix = Request::route()->getprefix();
+$route = Route::current()->getName();
+@endphp
 <header>
     <div id="sticky-header" class="menu__area transparent-header">
         <div class="container custom-container">
@@ -7,13 +11,13 @@
                     <div class="menu__wrap">
                         <nav class="menu__nav">
                             <div class="logo">
-                                <a href="index.html" class="logo__black"><img src="{{ asset('frontend/assets/img/logo/logo_black.png') }}" alt=""></a>
-                                <a href="index.html" class="logo__white"><img src="{{ asset('frontend/assets/img/logo/logo_white.png') }}" alt=""></a>
+                                <a href="{{route('user.dashboard')}}" class="logo__black"><img src="{{ asset('frontend/assets/img/logo/logo_black.png') }}" alt=""></a>
+                                <a href="{{route('user.dashboard')}}" class="logo__white"><img src="{{ asset('frontend/assets/img/logo/logo_white.png') }}" alt=""></a>
                             </div>
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="{{ route('home.about') }}">About</a></li>
+                                    <li class="{{ ($route == 'user.dashboard')?'active':''}}"><a href="{{route('user.dashboard')}}">Home</a></li>
+                                    <li class="{{ ($route == 'home.about')?'active':''}}"><a href="{{ route('home.about') }}">About</a></li>
                                     <li><a href="services-details.html">Services</a></li>
                                     <li class="menu-item-has-children"><a href="#">Portfolio</a>
                                         <ul class="sub-menu">
