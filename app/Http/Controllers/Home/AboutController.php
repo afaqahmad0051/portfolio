@@ -56,4 +56,32 @@ class AboutController extends Controller
         $about = About::find(1);
         return view('user.pages.about',compact('about'));
     }
+
+    public function AboutMultiImage()
+    {
+        return view('admin.about.about_images');
+    }
+
+    public function StoreMultiImage(Request $request)
+    {
+        $images = $request->file('multi_image');
+        foreach ($images as $image) {
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(523,605)->save('upload/admin_images/'.$name_gen);
+            $save_url = 'upload/admin_images/'.$name_gen;
+            About::findOrFail($id)->update([
+                'title' => $request->title,
+                'short_title' => $request->short_title,
+                'short_description' => $request->short_description,
+                'about_description' => $request->about_description,
+                'skills_description' => $request->skills_description,
+                'about_image' => $save_url,
+            ]);
+            $notification = array(
+                'message' => 'About updated with image',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);           
+        }
+    }
 }

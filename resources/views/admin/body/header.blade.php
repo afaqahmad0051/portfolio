@@ -45,6 +45,16 @@
                     <i class="ri-fullscreen-line"></i>
                 </button>
             </div>
+            <div class="dropdown d-none d-lg-inline-block ms-1">
+                <button type="button" class="btn header-item noti-icon waves-effect">
+                    <i class="ri-sun-line"></i>
+                </button>
+            </div>
+            <div class="dropdown d-none d-lg-inline-block ms-1">
+                <button type="button" class="btn header-item noti-icon waves-effect">
+                    <i class="ri-moon-line"></i>
+                </button>
+            </div>
 
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"

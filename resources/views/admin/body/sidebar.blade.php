@@ -35,22 +35,15 @@
                             <span>Slider</span>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="{{ route('about') }}" class=" waves-effect">                        
-                            <i class="ri-user-2-fill"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
         
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="ri-mail-send-line"></i>
-                            <span>Email</span>
+                            <i class="ri-user-2-fill"></i>
+                            <span>About</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="email-inbox.html">Inbox</a></li>
-                            <li><a href="email-read.html">Read Email</a></li>
+                            <li><a href="{{ route('about') }}">About Details</a></li>
+                            <li><a href="{{ route('about.images') }}">About Images</a></li>
                         </ul>
                     </li>
 

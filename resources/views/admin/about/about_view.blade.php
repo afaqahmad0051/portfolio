@@ -71,7 +71,7 @@
                             <div class="col-md-6">                                
                             </div>
                             <div class="col-md-6">                                
-                                <input type="submit" value="Update" class="btn btn-rounded btn-info waves-effect waves-light" style="float: right;">                                
+                                <input type="submit" value="Save" class="btn btn-rounded btn-info waves-effect waves-light" style="float: right;">                                
                             </div>
                         </div>
                     </form>
