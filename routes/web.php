@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\SliderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +53,24 @@ Route::controller(AboutController::class)->group(function () {
     Route::get('/about','HomeAbout')->name('home.about');
     Route::get('/about/images','AboutMultiImage')->name('about.images');
     Route::post('/store/about/images','StoreMultiImage')->name('store.about.images');
+    Route::get('/all/about/images','AllMultiImage')->name('about.all.images');
+    Route::get('/edit/about/images/{id}','EditMultiImage')->name('edit.about.images');
+    Route::post('/update/about/images/{id}','UpdateMultiImage')->name('update.about.images');
+    Route::get('/delete/about/images/{id}','DeleteMultiImage')->name('delete.about.images');
+});
+
+Route::controller(PortfolioController::class)->group(function () {
+    Route::get('/portfolio','portfolio')->name('portfolio');
+    Route::get('/portfolio/add','Addportfolio')->name('add.portfolio');
+    Route::get('/portfolio/store','StorePortfolio')->name('store.portfolio');
+    // Route::post('/update/about/{id}','UpdateAbout')->name('update.about');
+    // Route::get('/about','HomeAbout')->name('home.about');
+    // Route::get('/about/images','AboutMultiImage')->name('about.images');
+    // Route::post('/store/about/images','StoreMultiImage')->name('store.about.images');
+    // Route::get('/all/about/images','AllMultiImage')->name('about.all.images');
+    // Route::get('/edit/about/images/{id}','EditMultiImage')->name('edit.about.images');
+    // Route::post('/update/about/images/{id}','UpdateMultiImage')->name('update.about.images');
+    // Route::get('/delete/about/images/{id}','DeleteMultiImage')->name('delete.about.images');
 });
 
 require __DIR__.'/auth.php';

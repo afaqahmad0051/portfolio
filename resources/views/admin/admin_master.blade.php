@@ -22,16 +22,16 @@
         <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />  
 
         <!-- Bootstrap Css -->
-        <link href="{{ asset('backend/assets/css/bootstrap-dark.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link id="bootstrap" href="{{ asset('backend/assets/css/bootstrap-dark.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
         <!-- Icons Css -->
-        <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css"/>
         <!-- App Css-->
-        <link href="{{ asset('backend/assets/css/app-dark.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+        <link id="main_app" href="{{ asset('backend/assets/css/app-dark.min.css') }}" id="app-style" rel="stylesheet" type="text/css" id="app_css"/>
 
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" >
 
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
- 
+        <!-- Toastr online cdn link -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     </head>
 
     <body data-topbar="dark">
@@ -81,7 +81,6 @@
         <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
 
-        
         <!-- apexcharts -->
         <script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
@@ -114,9 +113,7 @@
 
             <!-- Datatable init js -->
         <script src="{{ asset('backend/assets/js/pages/datatables.init.js') }}"></script>
-
-        
-
+        <!-- Required datatable js -->
         
         <script src="{{ asset('backend/assets/js/code.js') }}"></script>
         <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
@@ -127,32 +124,76 @@
 
         <script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js" ></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-        
         <script>
-            @if(Session::has('message'))
+            // ​$('#sun').click(function() {
+            //     alert('vhjvuy');
+            // });​
+            $("#moon").hide();
+            $("#sun").click(function(){
+                $("#moon").show();
+                $("#bootstrap").attr("href", "{{ asset('backend/assets/css/bootstrap.min.css') }}");                    
+                $("#main_app").attr("href", "{{ asset('backend/assets/css/app.min.css') }}");                    
+                $("#sun").hide();
+            });
+            $("#moon").click(function(){
+                $("#sun").show();
+                $("#bootstrap").attr("href", "{{ asset('backend/assets/css/bootstrap-dark.min.css') }}");                    
+                $("#main_app").attr("href", "{{ asset('backend/assets/css/app-dark.min.css') }}");                    
+                $("#moon").hide();
+            });
+        </script>
+        
+        <!-- Sweet Alert Link -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            $(function () {
+            $(document).on('click', '#delete', function (e) {
+                e.preventDefault();
+                var link = $(this).attr("href");
+                Swal.fire({
+                title: 'Are you sure?',
+                text: "Delete This Data Permanently!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = link
+                    Swal.fire(
+                    'Deleted!',
+                    'User has been deleted.',
+                    'success'
+                    )
+                }
+                })
+            });
+            });
+        </script>
+          <!-- Toastr Link -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script>
+            @if (Session:: has('message'))
             var type = "{{ Session::get('alert-type','info') }}"
-            switch(type){
-                case 'info':
+            switch (type) {
+            case 'info':
                 toastr.info(" {{ Session::get('message') }} ");
                 break;
 
-                case 'success':
+            case 'success':
                 toastr.success(" {{ Session::get('message') }} ");
                 break;
 
-                case 'warning':
+            case 'warning':
                 toastr.warning(" {{ Session::get('message') }} ");
                 break;
 
-                case 'error':
+            case 'error':
                 toastr.error(" {{ Session::get('message') }} ");
-                break; 
+                break;
             }
-            @endif 
+            @endif
         </script>
     </body>
-
 </html>

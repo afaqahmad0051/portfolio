@@ -47,12 +47,8 @@
             </div>
             <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect">
-                    <i class="ri-sun-line"></i>
-                </button>
-            </div>
-            <div class="dropdown d-none d-lg-inline-block ms-1">
-                <button type="button" class="btn header-item noti-icon waves-effect">
-                    <i class="ri-moon-line"></i>
+                    <i class="ri-sun-line" id="sun"></i>
+                    <i class="ri-moon-line" id="moon"></i>
                 </button>
             </div>
 

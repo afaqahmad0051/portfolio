@@ -39,11 +39,23 @@
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="ri-user-2-fill"></i>
-                            <span>About</span>
+                            <span>About Setup</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="{{ route('about') }}">About Details</a></li>
                             <li><a href="{{ route('about.images') }}">About Images</a></li>
+                            <li><a href="{{ route('about.all.images') }}">About Images Listing</a></li>
+                        </ul>
+                    </li>
+        
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="ri-user-2-fill"></i>
+                            <span>Portfolio Setup</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('add.portfolio') }}">Add Portfolio</a></li>
+                            <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
                         </ul>
                     </li>
 
