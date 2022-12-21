@@ -62,15 +62,11 @@ Route::controller(AboutController::class)->group(function () {
 Route::controller(PortfolioController::class)->group(function () {
     Route::get('/portfolio','portfolio')->name('portfolio');
     Route::get('/portfolio/add','Addportfolio')->name('add.portfolio');
-    Route::get('/portfolio/store','StorePortfolio')->name('store.portfolio');
-    // Route::post('/update/about/{id}','UpdateAbout')->name('update.about');
-    // Route::get('/about','HomeAbout')->name('home.about');
-    // Route::get('/about/images','AboutMultiImage')->name('about.images');
-    // Route::post('/store/about/images','StoreMultiImage')->name('store.about.images');
-    // Route::get('/all/about/images','AllMultiImage')->name('about.all.images');
-    // Route::get('/edit/about/images/{id}','EditMultiImage')->name('edit.about.images');
-    // Route::post('/update/about/images/{id}','UpdateMultiImage')->name('update.about.images');
-    // Route::get('/delete/about/images/{id}','DeleteMultiImage')->name('delete.about.images');
+    Route::post('/portfolio/store','StorePortfolio')->name('store.portfolio');
+    Route::get('/portfolio/edit/{id}','EditPortfolio')->name('edit.portfolio');
+    Route::post('/portfolio/update/{id}','UpdatePortfolio')->name('update.portfolio');
+    Route::get('/portfolio/delete/{id}','DeletePortfolio')->name('delete.portfolio');
+    Route::get('/portfolio/details/{id}','PortfolioDetails')->name('portfolio.details');
 });
 
 require __DIR__.'/auth.php';

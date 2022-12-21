@@ -19,9 +19,58 @@
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/default.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
+        {{-- CSS for the image show on full screen after clicking on it  --}}
+        <style>
+            .popup{
+                width: 900px;
+                margin: auto;
+                text-align: center
+            }
+            .popup img{
+                width: 1020;
+                height: 519;
+            }
+            .show{
+                z-index: 999;
+                display: none; 
+            }
+            .show .overlay{
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,.66);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .show .img-show{
+                width: 1250;
+                height: 550;
+                background: #FFF;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                overflow: hidden
+            }
+            .img-show span{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 99;
+                cursor: pointer;
+            }
+            .img-show img{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+        {{-- CSS for the image show on full screen after clicking on it  --}}
     </head>
     <body class="active-dark-mode">
-    {{-- <body> --}}
+        {{-- <body> --}}
 
         <!-- preloader-start -->
         <div id="preloader">
@@ -51,9 +100,6 @@
             @include('user.body.footer')
         <!-- Footer-area-end -->
 
-
-
-
 		<!-- JS here -->
         <script src="{{ asset('frontend/assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
@@ -66,5 +112,22 @@
         <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/plugins.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+
+        {{-- Focus Image on full screen on click on it --}}
+        {{-- <script>
+            $(function () {
+                "use strict";                
+                $(".popup img").click(function () {
+                    var src = $(this).attr("src");
+                    console.log(src);                    
+                    $(".show").fadeIn();
+                    $(".img-show img").attr("src", src);
+                });                
+                $("span, .overlay").click(function () {
+                    $(".show").fadeOut();
+                });                
+            });
+        </script> --}}
+        {{-- Focus Image on full screen on click on it --}}
     </body>
 </html>

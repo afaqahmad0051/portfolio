@@ -13,21 +13,21 @@
                         <div class="col-6">
                         </div>
                     </div><hr>
-                    <form action="{{ route('store.portfolio') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('update.portfolio',$portfolio->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-3 col-form-label">Name: <span class="text-danger">*</span></label>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="text" name="portfolio_name">
+                                        <input class="form-control" type="text" value="{{ $portfolio->portfolio_name }}" name="portfolio_name">
                                     </div>
                                 </div>
                                 <!-- end row -->
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-3 col-form-label">Title: <span class="text-danger">*</span></label>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="text" name="portfolio_title">
+                                        <input class="form-control" type="text" value="{{ $portfolio->portfolio_title }}" name="portfolio_title">
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -36,7 +36,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-3 col-form-label">Image: <span class="text-danger">*</span></label>
                                     <div class="col-sm-9">
-                                        <img class="rounded avatar-lg" id="showImg" src="{{url('upload/blank.jpg')}}" style="float: right;">
+                                        <img class="rounded avatar-lg" id="showImg" src="{{ $portfolio->portfolio_image?asset($portfolio->portfolio_image):url('upload/blank.jpg')}}" style="float: right;">
                                         <input class="form-control" type="file" name="portfolio_image" id="image" readonly style="margin-top: 7rem">
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-3 col-form-label">Portfolio Description <span class="text-danger">*</span></label>
                                     <div class="col-sm-9">
-                                        <textarea id="elm1" name="portfolio_description"></textarea>
+                                        <textarea id="elm1" name="portfolio_description">{!! $portfolio->portfolio_description !!}</textarea>
                                     </div>
                                 </div>
                                 <!-- end row -->

@@ -50,7 +50,7 @@
         
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="ri-user-2-fill"></i>
+                            <i class="ri-stack-line"></i>
                             <span>Portfolio Setup</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">

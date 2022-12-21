@@ -29,8 +29,8 @@
                                     <img src="{{ asset($item->portfolio_image) }}" style="width: 60px; height:60px;">
                                 </td>
                                 <td>
-                                    <a href="{{ route('edit.about.images', $item->id ) }}" class="btn btn-info btn-sm" title="Edit"><i class="fa fa-edit"></i> </a>
-                                    <a href="{{ route('delete.about.images', $item->id ) }}" class="btn btn-danger btn-sm" id="delete" title="Delete"><i class="fa fa-trash"></i> </a>
+                                    <a href="{{ route('edit.portfolio', $item->id ) }}" class="btn btn-info btn-sm" title="Edit"><i class="fa fa-edit"></i> </a>
+                                    <a href="{{ route('delete.portfolio', $item->id ) }}" class="btn btn-danger btn-sm" id="delete" title="Delete"><i class="fa fa-trash"></i> </a>
                                 </td>
                             </tr>
                         @endforeach
