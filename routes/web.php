@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\SliderController;
 use App\Http\Controllers\ProfileController;
@@ -67,6 +68,11 @@ Route::controller(PortfolioController::class)->group(function () {
     Route::post('/portfolio/update/{id}','UpdatePortfolio')->name('update.portfolio');
     Route::get('/portfolio/delete/{id}','DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}','PortfolioDetails')->name('portfolio.details');
+});
+
+Route::controller(FooterController::class)->group(function () {
+    Route::get('/footer','footer')->name('footer');    
+    Route::post('/footer/update/{id}','UpdateFooter')->name('update.footer');
 });
 
 require __DIR__.'/auth.php';
