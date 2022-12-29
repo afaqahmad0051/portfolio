@@ -50,12 +50,24 @@
         
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="ri-stack-line"></i>
+                            <i class="ri-send-plane-fill"></i>
                             <span>Portfolio Setup</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="{{ route('add.portfolio') }}">Add Portfolio</a></li>
                             <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="ri-clipboard-line"></i>
+                            <span>Blog Setup</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('blog.category') }}">Category</a></li>
+                            <li><a href="{{ route('blog') }}">Blog</a></li>
+                            <li><a href="{{ route('add.blog') }}">Add Blog</a></li>
                         </ul>
                     </li>
         
