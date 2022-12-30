@@ -4132,14 +4132,14 @@ Breadcrumb
       -moz-border-radius: 50%;
       border-radius: 50%; }
   .blog__post__avatar .post__by {
-    color: #191B1E;
+    color: white;
     font-weight: 500; }
     .blog__post__avatar .post__by a {
-      color: #68666C;
+      color: wheat;
       font-weight: 400;
       margin-left: 5px; }
       .blog__post__avatar .post__by a:hover {
-        color: #0054FF; }
+        color: white; }
 
 .blog__sidebar {
   margin-left: 48px; }
@@ -4206,7 +4206,7 @@ Breadcrumb
   .rc__post__item:last-child {
     margin-bottom: 0; }
   .rc__post__item:hover .rc__post__content .title a {
-    color: #191B1E;
+    color: wheat;
     background-size: 0 1px, 100% 1px; }
 
 .rc__post__thumb {
@@ -4249,7 +4249,7 @@ Breadcrumb
   align-items: center;
   justify-content: space-between;
   font-size: 15px;
-  color: #68666C;
+  color: white;
   font-weight: 400;
   -webkit-transition: all 0s ease-out 0s;
   -moz-transition: all 0s ease-out 0s;
@@ -4262,7 +4262,7 @@ Breadcrumb
     margin-left: 5px; }
   .sidebar__cat__item a:hover {
     font-weight: 500;
-    color: #191B1E; }
+    color: wheat; }
 
 .sidebar__comment__item + li {
   margin-top: 20px; }
@@ -4346,7 +4346,7 @@ Breadcrumb
       flex: 0 0 100%;
       margin-bottom: 20px; } }
   .blog__details__tag .title {
-    color: #191B1E;
+    /* color: #191B1E; */
     font-size: 20px;
     font-weight: 500;
     line-height: 1.1;
@@ -4361,8 +4361,8 @@ Breadcrumb
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 500;
-    color: #68666C;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: white;
+    border: 1px solid white;
     margin: 5px 10px 5px 0; }
     .blog__details__tag a:hover {
       color: #fff;
@@ -4774,10 +4774,9 @@ Breadcrumb
       height: 350px; } }
   #contact-map iframe {
     width: 100%;
-    height: 100%; }
+    height: 70%; }
 
 .contact__form {
-  background: #fff;
   padding: 80px;
   box-shadow: 1px -1px 20px 10px rgba(110, 125, 134, 0.03);
   text-align: center;
@@ -4826,7 +4825,7 @@ Breadcrumb
 
 .contact__info {
   text-align: center;
-  background: #fff;
+  /* background: #fff; */
   border: 1px solid #F7F7F7;
   padding: 50px 50px;
   margin-bottom: 30px;
@@ -4843,16 +4842,19 @@ Breadcrumb
   .contact__info__icon {
     margin-bottom: 20px; }
     .contact__info__icon img {
+      background-color: slategray;
       max-height: 60px; }
   .contact__info__content .title {
     text-transform: capitalize;
     font-family: "Roboto", sans-serif;
     margin-bottom: 7px;
+    /* color: #191B1E; */
     font-size: 24px;
     font-weight: 500; }
   .contact__info__content span {
     display: block;
     font-size: 17px;
+    /* color: #454545; */
     line-height: 1.5; }
 
 /*=============================

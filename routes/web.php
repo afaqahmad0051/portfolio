@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
+use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\SliderController;
@@ -89,12 +90,21 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('/blog/edit/{id}','EditBlog')->name('edit.blog');
     Route::post('/blog/update/{id}','UpdateBlog')->name('update.blog');
     Route::get('/blog/delete/{id}','DeleteBlog')->name('delete.blog');
-    // Route::get('/portfolio/details/{id}','PortfolioDetails')->name('portfolio.details');
+    Route::get('/blog/details/{id}','BlogDetails')->name('blog.details');
+    Route::get('/blog/category-wise/{id}','CategoryBlog')->name('category.post');    
+    Route::get('/blog/home','HomeBlog')->name('home.blog');    
 });
 
 Route::controller(FooterController::class)->group(function () {
     Route::get('/footer','footer')->name('footer');    
     Route::post('/footer/update/{id}','UpdateFooter')->name('update.footer');
+});
+
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/contact','contact')->name('contact.me');    
+    Route::post('/store/message','StoreMessage')->name('store.message');
+    Route::get('/contact/list','contactList')->name('contact');    
+    Route::get('/contact/delete/{id}','contactDelete')->name('delete.contact.message');    
 });
 
 require __DIR__.'/auth.php';
