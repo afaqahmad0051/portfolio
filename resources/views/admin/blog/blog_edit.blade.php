@@ -5,8 +5,8 @@
     .bootstrap-tagsinput .tag{
         margin-right: 2px;
         color: black;
-        font-weight: bolder;
-        background: gray;
+        font-weight: 500;
+        background: slategray;
         border-radius: 5px;
     } 
 </style>
@@ -76,7 +76,7 @@
                             <div class="col-md-6">                                
                             </div>
                             <div class="col-md-6">                                
-                                <input type="submit" value="Save" class="btn btn-rounded btn-info waves-effect waves-light" style="float: right;">                                
+                                <input type="submit" value="Update" class="btn btn-rounded btn-info waves-effect waves-light" style="float: right;">                                
                             </div>
                         </div>
                     </form>

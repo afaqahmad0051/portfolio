@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -103,5 +104,29 @@ class BlogController extends Controller
             'alert-type' => 'error'
         );
         return redirect()->back()->with($notification);
+    }
+
+    public function BlogDetails($id)
+    {
+        $blogs = Blog::latest()->limit(5)->get();
+        $blog = Blog::findOrFail($id);
+        $categories = BlogCategory::orderBy('blog_category','asc')->get();
+        return view('user.pages.blog',compact('blog','blogs','categories'));
+    }
+
+    public function CategoryBlog($id)
+    {
+        $user = User::find(1);
+        $blogPost = Blog::where('blog_category_id',$id)->orderBy('id','desc')->get();
+        $categoryName = BlogCategory::findOrFail($id);
+        return view('user.pages.category_wise_blog',compact('blogPost','user','categoryName'));
+    }
+
+    public function HomeBlog()
+    {
+        $user = User::find(1);
+        $blogs = Blog::latest()->get();
+        $categories = BlogCategory::orderBy('blog_category','asc')->get();
+        return view('user.pages.home_blog',compact('blogs','categories','user'));
     }
 }
