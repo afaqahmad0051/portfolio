@@ -1,5 +1,8 @@
 @extends('user.main_master')
 @section('user')
+@section('title')
+    About | Afaq Ahmad
+@endsection
     <!-- main-area -->
     <main>
         <!-- breadcrumb-area -->

@@ -3313,16 +3313,19 @@ Breadcrumb
       .portfolio__inner__nav {
         margin-bottom: 50px; } }
     .portfolio__inner__nav button {
-      border: 1px solid #191B1E;
+      border: 1px solid wheat;
       margin: 0 15px 15px;
       text-transform: uppercase;
-      color: #191B1E;
+      color: white;
       letter-spacing: 0.02em;
       background: transparent;
       font-weight: 700;
       font-size: 15px;
       padding: 14px 49px;
       position: relative; }
+      .portfolio__inner__nav :hover {
+        color: #0054FF;
+      }
       @media (max-width: 1199.98px) {
         .portfolio__inner__nav button {
           padding: 12px 35px; } }

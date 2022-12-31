@@ -125,7 +125,7 @@ class BlogController extends Controller
     public function HomeBlog()
     {
         $user = User::find(1);
-        $blogs = Blog::latest()->get();
+        $blogs = Blog::latest()->paginate(3);
         $categories = BlogCategory::orderBy('blog_category','asc')->get();
         return view('user.pages.home_blog',compact('blogs','categories','user'));
     }

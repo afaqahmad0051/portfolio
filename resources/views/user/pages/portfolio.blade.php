@@ -1,5 +1,8 @@
 @extends('user.main_master')
 @section('user')
+@section('title')
+    Portfolio | Afaq Ahmad
+@endsection
     <main>
         <!-- breadcrumb-area -->
         <section class="breadcrumb__wrap">

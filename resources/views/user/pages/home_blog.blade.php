@@ -1,5 +1,8 @@
 @extends('user.main_master')
 @section('user')
+@section('title')
+    Blog | Afaq Ahmad
+@endsection
 <!-- breadcrumb-area -->
 <section class="breadcrumb__wrap">
     <div class="container custom-container">
@@ -48,24 +51,16 @@
                             <h2 class="title"><a href="{{route('blog.details',$item->id)}}">{{ $item->blog_title }}</a></h2>
                             <p>{!! Str::of($item->blog_description)->words(25, ' ...') !!}</p>
                             <ul class="blog__post__meta">
-                                <li><i class="fal fa-calendar-alt"></i>{{date('d-m-Y', strtotime(trim(str_replace('/','-',$item->created_at))))}} - {{date('h:i:s A', strtotime(trim(str_replace('/','-',$item->created_at))))}}</li>
+                                <li style="color: white;"><i class="fal fa-calendar-alt"></i>{{date('d-m-Y', strtotime(trim(str_replace('/','-',$item->created_at))))}} - {{date('h:i:s A', strtotime(trim(str_replace('/','-',$item->created_at))))}}</li>
                                 <li><i class="fal fa-comments-alt"></i> <a href="#">Comment (08)</a></li>
-                                <li class="post-share"><a href="#"><i class="fal fa-share-all"></i> (18)</a></li>
+                                {{-- <li class="post-share"><a href="#"><i class="fal fa-share-all"></i> (18)</a></li> --}}
                             </ul>
                         </div>
                     </div>
                 @endforeach
+                
                 <div class="pagination-wrap">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#"><i class="far fa-long-arrow-left"></i></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">...</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="far fa-long-arrow-right"></i></a></li>
-                        </ul>
-                    </nav>
+                    {{ $blogs->links('vendor.pagination.custom') }}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -106,33 +101,7 @@
 <!-- blog-area-end -->
 <!-- contact-area -->
 <section class="homeContact homeContact__style__two">
-    <div class="container">
-        <div class="homeContact__wrap">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section__title">
-                        <span class="sub-title">07 - Say hello</span>
-                        <h2 class="title">Any questions? Feel free <br> to contact</h2>
-                    </div>
-                    <div class="homeContact__content">
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                        <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="homeContact__form">
-                        <form action="#">
-                            <input type="text" placeholder="Enter name*">
-                            <input type="email" placeholder="Enter mail*">
-                            <input type="number" placeholder="Enter number*">
-                            <textarea name="message" placeholder="Enter Massage*"></textarea>
-                            <button type="submit">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('user.layouts.contact')
 </section>
 <!-- contact-area-end -->
 

@@ -1,5 +1,8 @@
 @extends('user.main_master')
 @section('user')
+@section('title')
+    Contact | Afaq Ahmad
+@endsection
 <!-- breadcrumb-area -->
 <section class="breadcrumb__wrap">
     <div class="container custom-container">
